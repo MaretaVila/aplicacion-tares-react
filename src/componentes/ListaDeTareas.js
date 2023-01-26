@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TareaFormulario from "./TareaFormulario";
 import Tarea from "./Tarea";
 import "../stylesheet/ListaDeTareas.css";
@@ -31,6 +31,10 @@ function ListaDeTareas() {
     });
     setTareas(tareasActualizadas);
   };
+
+  useEffect(() => {
+    localStorage.setItem("tareas", JSON.stringify(tareas));
+  }, [tareas]);
 
   return (
     <>
