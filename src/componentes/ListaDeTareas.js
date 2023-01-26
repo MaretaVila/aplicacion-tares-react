@@ -32,6 +32,15 @@ function ListaDeTareas() {
     setTareas(tareasActualizadas);
   };
 
+  // Guardar Tareas en el localStorage
+
+  useEffect(() => {
+    let data = localStorage.getItem("tareas");
+    if (data) {
+      setTareas(JSON.parse(data));
+    }
+  }, []);
+
   useEffect(() => {
     localStorage.setItem("tareas", JSON.stringify(tareas));
   }, [tareas]);
