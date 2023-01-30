@@ -15,12 +15,14 @@ function ListaDeTareas() {
     }
   };
 
-  //  trim es un metodo que nos permite quitar los espacios del principio y del final de una cadena de caracteres
+  //  Trim es un metodo que nos permite quitar los espacios del principio y del final de una cadena de caracteres
 
   const eliminarTarea = (id) => {
     const tareasActualizadas = tareas.filter((tarea) => tarea.id !== id);
     setTareas(tareasActualizadas);
   };
+
+  // Marcar tarea como completada
 
   const completarTarea = (id) => {
     const tareasActualizadas = tareas.map((tarea) => {
@@ -30,6 +32,12 @@ function ListaDeTareas() {
       return tarea;
     });
     setTareas(tareasActualizadas);
+  };
+
+  // Editar tareas
+
+  const editarTarea = (id) => {
+    const tareasActualizadas 
   };
 
   // Guardar Tareas en el localStorage
