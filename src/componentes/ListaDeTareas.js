@@ -36,9 +36,15 @@ function ListaDeTareas() {
 
   // Editar tareas
 
-  const editarTarea = (id) => {
-    const tareasActualizadas 
+  const editarTarea = (data) => {
+    let { id, tarea } = data;
+    localStorage.setItem("id", id);
+    localStorage.setItem("tarea", tarea);
   };
+
+  // const editarTarea = (id, tarea) => {
+  //   setTareas([...tareas.slice(0, id), tarea, ...tarea.slice(id + 1)]);
+  // };
 
   // Guardar Tareas en el localStorage
 
@@ -65,6 +71,7 @@ function ListaDeTareas() {
             completada={tarea.completada}
             eliminarTarea={eliminarTarea}
             completarTarea={completarTarea}
+            editarTarea={editarTarea}
           />
         ))}
       </div>
