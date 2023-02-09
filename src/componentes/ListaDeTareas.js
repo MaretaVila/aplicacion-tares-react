@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import TareaFormulario from "./TareaFormulario";
 import Tarea from "./Tarea";
 import "../stylesheet/ListaDeTareas.css";
+import EditarTarea from "./EditarTarea";
 
 function ListaDeTareas() {
   const [tareas, setTareas] = useState([]);
@@ -36,14 +37,21 @@ function ListaDeTareas() {
 
   // Editar tareas
 
-  const editarTarea = (data) => {
-    let { id, tarea } = data;
-    localStorage.setItem("id", id);
-    localStorage.setItem("tarea", tarea);
-  };
+  // const editarTarea = (data) => {
+  //   let { id, tarea } = data;
+  //   localStorage.setItem("id", id);
+  //   localStorage.setItem("tarea", tarea);
+  // };
 
-  // const editarTarea = (id, tarea) => {
-  //   setTareas([...tareas.slice(0, id), tarea, ...tarea.slice(id + 1)]);
+  // const editarTarea = (id, tareaNueva) => {
+  //   tareas(
+  //     tareas.map((tarea) => {
+  //       if (tarea.id === id) {
+  //         return { ...tarea, texto: tareaNueva };
+  //       }
+  //       return tarea;
+  //     })
+  //   );
   // };
 
   // Guardar Tareas en el localStorage
@@ -71,7 +79,6 @@ function ListaDeTareas() {
             completada={tarea.completada}
             eliminarTarea={eliminarTarea}
             completarTarea={completarTarea}
-            editarTarea={editarTarea}
           />
         ))}
       </div>

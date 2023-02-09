@@ -19,9 +19,9 @@ function Tarea({
       <div className="tarea-texto" onClick={() => completarTarea(id)}>
         {texto}
       </div>
-      <div className="tarea-contenedor-icono" onChange={() => editarTarea(id)}>
+      {/* <div className="tarea-contenedor-icono" onClick={() => editarTarea(id)}>
         <AiOutlineEdit className="tarea-icono" />
-      </div>
+      </div> */}
       <div className="tarea-contenedor-icono" onClick={() => eliminarTarea(id)}>
         <AiOutlineCloseCircle className="tarea-icono" />
       </div>
